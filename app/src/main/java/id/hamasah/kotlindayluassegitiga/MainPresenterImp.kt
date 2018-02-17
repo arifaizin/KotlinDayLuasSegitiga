@@ -1,19 +1,20 @@
 package id.hamasah.kotlindayluassegitiga
 
 import android.widget.EditText
+import id.hamasah.kotlindaymvp.MainPresenter
 import id.hamasah.kotlindaymvp.MainView
 
 /**
  * Created by idn on 2/17/2018.
  */
-class MainPresenterImp {
+class MainPresenterImp : MainPresenter{
     var mainView : MainView? = null
 
     constructor(mainView: MainView?) {
         this.mainView = mainView
     }
 
-    fun hitungLuas (input1 : EditText, input2 : EditText) {
+    override fun hitungLuas (input1 : EditText, input2 : EditText) {
         if (input1.text.toString().isEmpty() || input2.text.toString().isEmpty()){
             mainView?.kosong()
         }
